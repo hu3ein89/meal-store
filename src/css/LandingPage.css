@@ -1,0 +1,137 @@
+.landing-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  /* Hero Banner Styles */
+  .hero-carousel {
+    height: 500px;
+    margin-bottom: 40px;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .hero-slide {
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    color: white;
+  }
+  
+  .slide-1 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                    url('https://img.freepik.com/free-photo/top-view-table-full-delicious-food-composition_23-2149141352.jpg');
+  }
+  
+  .slide-2 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                    url('https://img.freepik.com/free-photo/front-view-burger-stand_141793-15542.jpg?w=900&t=st=1691234567~exp=1691235167~hmac=xxxxxxxx');
+  }
+  
+  .slide-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+    padding: 0 20px;
+  }
+  
+  .hero-title {
+    color: white !important;
+    font-size: 3rem !important;
+    margin-bottom: 20px !important;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+  }
+  
+  .hero-subtitle {
+    color: white;
+    font-size: 1.2rem;
+    display: block;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+  }
+  
+  /* Features Section */
+  .features-section {
+    margin: 60px 0;
+    padding: 40px 0;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+  }
+  
+  .feature-card {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .feature-icon {
+    font-size: 48px;
+    color: #1890ff;
+    margin-bottom: 20px;
+  }
+  
+  /* Featured Meals */
+  .featured-meals {
+    margin: 40px 0;
+  }
+  
+  .meal-image {
+    height: 250px;
+    object-fit: cover;
+  }
+  
+  .meal-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+  }
+  
+  .rating {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .no-meals-message {
+    text-align: center;
+    padding: 40px;
+    background-color: #fffbe6;
+    border-radius: 8px;
+    margin: 20px 0;
+  }
+  
+  /* Call to Action */
+  .cta-section {
+    text-align: center;
+    margin: 60px 0;
+    padding: 40px;
+    background-color: #f0f9ff;
+    border-radius: 8px;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .hero-carousel, .hero-slide {
+      height: 400px;
+    }
+    
+    .hero-title {
+      font-size: 2rem !important;
+    }
+    
+    .feature-icon {
+      font-size: 36px;
+    }
+  }

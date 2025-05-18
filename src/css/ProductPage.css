@@ -1,0 +1,10 @@
+.ant-badge-count {
+    box-shadow: 0 0 0 1px #fff;
+    font-weight: bold;
+    transform: scale(1.1);
+    transition: all 0.3s ease;
+}
+
+.ant-badge-count:hover {
+    transform: scale(1.2);
+}
