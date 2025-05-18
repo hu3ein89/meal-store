@@ -2,17 +2,20 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Loading App...</title>
+  <title>Redirecting...</title>
   <script>
-    // 1. Handle root domain access
-    if (location.pathname === '/' || !location.pathname.includes('meal-store')) {
-      location.replace('/meal-store/');
-    }
-    // 2. Handle deep links
-    else {
-      const appPath = location.pathname.split('/').slice(2).join('/');
-      localStorage.setItem('redirectPath', appPath);
-      location.replace('/meal-store/');
+    // Handle all routing cases
+    const repo = 'meal-store';
+    const path = window.location.pathname.split('/');
+    
+    if (path[1] !== repo) {
+      // Case 1: Root domain access
+      window.location.replace(`/${repo}/`);
+    } else if (path.length > 2) {
+      // Case 2: Deep link access
+      const redirect = path.slice(2).join('/');
+      localStorage.setItem('redirectPath', redirect);
+      window.location.replace(`/${repo}/`);
     }
   </script>
   <noscript>
@@ -20,8 +23,8 @@
   </noscript>
 <link rel="manifest" href="/meal-store/manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="/meal-store/registerSW.js"></script></head>
 <body>
-  <h1 style="text-align: center; margin-top: 50px;">
-    Loading your application...
+  <h1 style="text-align:center;margin-top:50px">
+    Loading application...
     <br>
     <a href="/meal-store/">Click here if not redirected</a>
   </h1>
