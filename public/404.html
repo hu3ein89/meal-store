@@ -4,20 +4,27 @@
   <meta charset="utf-8">
   <title>Redirecting...</title>
   <script>
-    // SPA fallback for GitHub Pages
-    const pathSegments = location.pathname.split('/');
-    const basePath = '/meal-store/'; // MUST match your vite.config.js base
-    const appPath = pathSegments.slice(2).join('/'); // Adjust slice if needed
+    // Enhanced SPA handling
+    const repoName = 'meal-store';
+    const path = window.location.pathname;
     
-    sessionStorage.setItem('redirect', appPath);
-    location.href = basePath;
+    // Case 1: Root domain access (https://hu3ein89.github.io)
+    if (!path.includes(repoName)) {
+      window.location.replace(`/${repoName}/`);
+    }
+    // Case 2: Nested route access (https://hu3ein89.github.io/meal-store/products)
+    else {
+      const appPath = path.split('/').slice(2).join('/');
+      sessionStorage.setItem('gh_redirect', appPath);
+      window.location.replace(`/${repoName}/`);
+    }
   </script>
   <noscript>
     <meta http-equiv="refresh" content="0; url=/meal-store/">
   </noscript>
 <link rel="manifest" href="/meal-store/manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="/meal-store/registerSW.js"></script></head>
 <body>
-  Redirecting to home page...
-  <a href="/meal-store/">Click here if not redirected</a>
+  <h1>Redirecting...</h1>
+  <p>If not redirected automatically, <a href="/meal-store/">click here</a>.</p>
 </body>
 </html>
