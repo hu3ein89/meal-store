@@ -204,9 +204,11 @@ const ProductPage = () => {
                 <Col xs={0} sm={0} md={6} lg={5} xl={4}>
                     <Card
                         title={<><FilterOutlined /> Filters</>}
-                        headStyle={{ background: '#f0f2f5', fontWeight: 'bold' }}
-                        bodyStyle={{ padding: '16px' }}
-                        style={{ position: 'sticky', top: '20px' }}
+                        styles={{
+                            header: { background: '#f0f2f5', fontWeight: 'bold'  },
+                            body: { padding: "24px" },
+                            position: 'sticky', top: '20px'
+                          }}
                     >
                         <FiltersContent />
                     </Card>
