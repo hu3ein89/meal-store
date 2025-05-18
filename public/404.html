@@ -1,22 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
   <title>Redirecting...</title>
   <script>
-    // Single Page App (SPA) fallback
-    const segmentCount = 1; // Adjust if your base URL has segments (/meal-store/)
-    const redirectTo = location.pathname.split('/').slice(segmentCount).join('/');
-    sessionStorage.redirect = redirectTo;
-    location.replace('/meal-store/');
+    // SPA fallback for GitHub Pages
+    const pathSegments = location.pathname.split('/');
+    const basePath = '/meal-store/'; // MUST match your vite.config.js base
+    const appPath = pathSegments.slice(2).join('/'); // Adjust slice if needed
+    
+    sessionStorage.setItem('redirect', appPath);
+    location.href = basePath;
   </script>
+  <noscript>
+    <meta http-equiv="refresh" content="0; url=/meal-store/">
+  </noscript>
 <link rel="manifest" href="/meal-store/manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="/meal-store/registerSW.js"></script></head>
 <body>
-  <noscript>
-    <h1>Page Not Found</h1>
-    <p>Redirecting to home page...</p>
-    <a href="/meal-store/">Click here if not redirected</a>
-  </noscript>
+  Redirecting to home page...
+  <a href="/meal-store/">Click here if not redirected</a>
 </body>
 </html>
