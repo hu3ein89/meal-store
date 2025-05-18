@@ -16,7 +16,6 @@ import { setActiveMenu } from "../slices/UiSlice";
 import { useEffect, useState } from "react";
 import logo from '../assets/Logo.png';
 import useBreakpoint from "antd/lib/grid/hooks/useBreakpoint";
-import { Helmet } from "react-helmet";
 
 const Header = () => {
     const isLoggedIn = useSelector(state => state.auth.isLoggedIn);
@@ -138,12 +137,6 @@ const Header = () => {
             createMenuItem('login', <UserOutlined />, 'Login', '/login'),
             createMenuItem('register', <UserOutlined />, 'Register', '/register')
         ];
-    // Add to your component
-    <Helmet>
-        <meta property="og:title" content="Online Store" />
-        <meta property="og:description" content="Premium Food Delivery Service" />
-        <meta property="og:image" content="/logo-social.png" />
-    </Helmet>
     const allMenuItems = [...commonItems, ...authItems];
 
     // Desktop View
@@ -184,7 +177,7 @@ const Header = () => {
                     theme="dark"
                     mode="horizontal"
                     selectedKeys={[activeMenu]}
-                    style={{
+                    stnpm yle={{
                         lineHeight: '64px',
                         borderBottom: 'none',
                         minWidth: '200px',
@@ -224,10 +217,12 @@ const Header = () => {
                 title="Menu"
                 placement="left"
                 onClose={onClose}
-                visible={visible}
-                bodyStyle={{ padding: 0 }}
-                headerStyle={{ background: '#001529', color: '#fff' }}
-                drawerStyle={{ background: '#001529' }}
+                open={visible}
+                styles={{
+                    header: { background: '#001529', color: '#fff'  },
+                    body: { padding: "24px" },
+                    content: { borderRadius: "10px" },
+                  }}
             >
                 <Menu
                     theme="dark"
@@ -241,6 +236,7 @@ const Header = () => {
     );
 
     return screens.md ? desktopView : mobileView;
+    
 };
 
 export default Header;
