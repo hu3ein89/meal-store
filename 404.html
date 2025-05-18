@@ -2,21 +2,17 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Redirecting...</title>
+  <title>Loading App...</title>
   <script>
-    // Enhanced SPA handling
-    const repoName = 'meal-store';
-    const path = window.location.pathname;
-    
-    // Case 1: Root domain access (https://hu3ein89.github.io)
-    if (!path.includes(repoName)) {
-      window.location.replace(`/${repoName}/`);
+    // 1. Handle root domain access
+    if (location.pathname === '/' || !location.pathname.includes('meal-store')) {
+      location.replace('/meal-store/');
     }
-    // Case 2: Nested route access (https://hu3ein89.github.io/meal-store/products)
+    // 2. Handle deep links
     else {
-      const appPath = path.split('/').slice(2).join('/');
-      sessionStorage.setItem('gh_redirect', appPath);
-      window.location.replace(`/${repoName}/`);
+      const appPath = location.pathname.split('/').slice(2).join('/');
+      localStorage.setItem('redirectPath', appPath);
+      location.replace('/meal-store/');
     }
   </script>
   <noscript>
@@ -24,7 +20,10 @@
   </noscript>
 </head>
 <body>
-  <h1>Redirecting...</h1>
-  <p>If not redirected automatically, <a href="/meal-store/">click here</a>.</p>
+  <h1 style="text-align: center; margin-top: 50px;">
+    Loading your application...
+    <br>
+    <a href="/meal-store/">Click here if not redirected</a>
+  </h1>
 </body>
 </html>
