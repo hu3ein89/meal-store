@@ -1,0 +1,1 @@
+import{b as o,j as r,N as s}from"./main-BaPzDb40.js";import"./antd-CxNmQ25d.js";import"./react-D5d5vywP.js";const u=({children:t})=>o(e=>e.auth.isLoggedIn)?t:r.jsx(s,{to:"/Login",replace:!0});export{u as default};
