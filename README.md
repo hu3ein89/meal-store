@@ -4,8 +4,8 @@
 
 👉 **Live Demo:** [https://hu3ein89.github.io/meal-store/](https://hu3ein89.github.io/meal-store/)  
 
-![Meal Store Preview](./public/screenshot.png)  
-*(Pro tip: Add a high-resolution screenshot of your UI here)*  
+![Meal Store Preview](./public/meal-store.jpg)  
+
 
 ---
 
