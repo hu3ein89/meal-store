@@ -1,6 +1,6 @@
-# 🍽️ Meal Store - React E-Commerce Demo  
+# Meal Store - React E-Commerce Demo  
 
-*A responsive food ordering UI built with modern front-end technologies*  
+*A responsive food ordering UI built with modern front-end technologies*  https://github.com/hu3ein89/meal-store/blob/main/README.md
 
 👉 **Live Demo:** [https://hu3ein89.github.io/meal-store/](https://hu3ein89.github.io/meal-store/)  
 
@@ -9,7 +9,7 @@
 
 ---
 
-## 🛠️ **Tech Stack**  
+## **Tech Stack**  
 **Front-End:**  
 - ⚛️ React.js (Vite)  
 - 🎨 Ant Design (UI Components)  
